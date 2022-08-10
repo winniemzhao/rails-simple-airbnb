@@ -1,0 +1,16 @@
+<div class="title">
+  <h1><%= @flat.name %></h1>
+  <p><%= @flat.address %></p>
+</div>
+<div class="description">
+  <h3>Description</h3>
+  <p><%= @flat.description %></p>
+</div>
+<div class="book">
+</div>
+<div class="details">
+  <h3>Details</h3>
+  <p><%= @flat.number_of_guests %></p>
+  <p>$<%= @flat.price_per_night %></p>
+</div>
+<%= link_to "Edit", edit_flat_path(@flat) %>

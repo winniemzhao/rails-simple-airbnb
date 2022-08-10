@@ -4,7 +4,7 @@ class FlatsController < ApplicationController
   end
 
   def show
-
+    @flat = Flat.find(params[:id])
   end
 
   def new
@@ -21,15 +21,19 @@ class FlatsController < ApplicationController
   end
 
   def edit
-
+    @flat = Flat.find(params[:id])
   end
 
   def update
-
+    @flat = Flat.find(params[:id])
+    @flat.update(flat_params)
+    redirect_to @flat, notice: 'Flat was successfully edited.'
   end
 
   def destroy
-
+    @flat = Flat.find(params[:id])
+    @flat.destroy
+    redirect_to @flat, status: :see_other
   end
 
   private

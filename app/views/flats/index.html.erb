@@ -8,7 +8,9 @@
         <p><i class="fa-solid fa-user-group"></i> <%= flat.number_of_guests %></p>
         <p><i class="fa-solid fa-dollar-sign"></i> <%= flat.price_per_night %></p>
         <div class="card-footer">
-          <%= link_to "More info", flat_path(flat) %>
+          <%= link_to "More info", flat_path(flat), class: "link-primary" %>
+          <%= link_to "Edit", edit_flat_path(flat), class: "link-warning" %>
+          <%= link_to "Remove", flat_path(flat), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "link-danger" %>
         </div>
       </div></li>
     <% end %>
